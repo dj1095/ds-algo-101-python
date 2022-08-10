@@ -10,6 +10,7 @@ def fetch_distinct_emails(content):
 
 
 def fetch_emails_from_doc(file_path):
+    file_content = ''
     try:
         file_content = open(file_path).read()
     except FileNotFoundError:
@@ -26,6 +27,8 @@ def fetch_emails_from_url(url):
 
 emails_doc = fetch_emails_from_doc('Lab6_Webpage.html')
 print(f'Distinct emails in the document : {emails_doc}')
+print(f' Total number of distinct emails in the document : {len(emails_doc)}')
 
 emails_url = fetch_emails_from_url(' http://e-mailid.blogspot.com/')
 print(f'Distinct emails in the url : {emails_url}')
+print(f'Total number of distinct emails in the document : {len(emails_url)}')
